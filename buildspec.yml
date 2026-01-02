@@ -4,6 +4,8 @@ phases:
     runtime-versions:
       nodejs: 20
     commands:
+      - cd resource/section-3/my-angular-project
+      - npm ci
       - npm install -g @angular/cli@17
   pre_build:
     commands:
