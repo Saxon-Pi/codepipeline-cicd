@@ -1,19 +1,26 @@
 version: 0.2
+
 phases:
   install:
     runtime-versions:
       nodejs: 20
     commands:
-      - cd resource/section-3/my-angular-project
-      - npm ci
       - npm install -g @angular/cli@17
+
   pre_build:
     commands:
-      - npm install
+      - cd resource/section-3/my-angular-project
+      - npm ci
+
   build:
     commands:
+      - cd resource/section-3/my-angular-project
+      - ls -la
+      - test -f angular.json && echo "FOUND angular.json" || echo "NO angular.json"
+      - ng version
       - ng build -c production
+
 artifacts:
-  base-directory: resource/section-3/my-angular-project
+  base-directory: resource/section-3/my-angular-project/dist
   files:
     - '**/*'
