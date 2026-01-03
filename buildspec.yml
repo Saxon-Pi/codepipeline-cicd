@@ -16,10 +16,6 @@ phases:
     commands:
       - pwd
       - ls -la
-      - ls -la resource || true
-      - ls -la resource/section-3 || true
-      - find resource -maxdepth 4 -type d -name "my-angular-project" -print || true
-      - cd resource/section-3/my-angular-project
       - test -f angular.json && echo "FOUND angular.json" || echo "NO angular.json"
       - ng version
       - ng build -c production
